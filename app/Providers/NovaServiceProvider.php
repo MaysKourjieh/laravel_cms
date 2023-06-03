@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Nova\ContactForm;
+use App\Nova\ContactFormInterest;
 use App\Nova\General;
+use App\Nova\TeamMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Menu\MenuGroup;
@@ -25,9 +28,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::mainMenu(function (Request $request) {
             return [
                 MenuSection::make('Website', [
-                    MenuItem::make('General')->path('/resources/generals/1/edit'),
+                    MenuItem::make('General')->path('/resources/general/1/edit'),
                     MenuGroup::make('Pages', [
                         MenuItem::make('Index')->path('/resources/index/1/edit'),
+                    ]),
+                    MenuGroup::make('Resources', [
+                        MenuItem::resource(TeamMember::class),
+                    ]),
+                    MenuGroup::make('Contact Forms Section', [
+                        MenuItem::resource(ContactForm::class),
+                        MenuItem::resource(ContactFormInterest::class),
                     ]),
                 ]),
 

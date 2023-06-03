@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\General;
 use App\Models\Index;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class PageSeeder extends Seeder
@@ -18,9 +17,9 @@ class PageSeeder extends Seeder
 //            'title' => 'Main',
 //        ]);
 
-        Index::create([
-            'title' => 'Main',
-        ]);
+//        Index::create([
+//            'title' => 'Main',
+//        ]);
 
     }
 }

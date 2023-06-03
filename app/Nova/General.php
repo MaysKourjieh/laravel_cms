@@ -20,6 +20,52 @@ class General extends Resource
     public static $model = \App\Models\General::class;
 
     /**
+     * Get the URI key for the resource.
+     *
+     * @return string
+     */
+    public static function uriKey()
+    {
+        return 'general';
+    }
+
+    /**
+     * Determine if the current user can create new resources.
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    public static function authorizedToCreate(Request $request)
+    {
+        return false;
+    }
+
+    /**
+     * Determine if the current user can delete the given resource or throw an exception.
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    public function authorizedToDelete(Request $request)
+    {
+        return false;
+    }
+
+    /**
+     * Determine if the current user can replicate the given resource or throw an exception.
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    public function authorizedToReplicate(Request $request)
+    {
+        return false;
+    }
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string

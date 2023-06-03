@@ -14,7 +14,19 @@ return new class extends Migration
         Schema::create('index', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
-
+            $table->text('product_title')->nullable();
+            $table->text('product_description')->nullable();
+            $table->text('product_cta')->nullable();
+            $table->text('about_title')->nullable();
+            $table->text('about_subtitle')->nullable();
+            $table->text('about_heading')->nullable();
+            $table->text('about_description')->nullable();
+            $table->text('about_cta')->nullable();
+            $table->text('team_title')->nullable();
+            $table->text('team_subtitle')->nullable();
+            $table->text('contact_title')->nullable();
+            $table->text('contact_subtitle')->nullable();
+            $table->text('contact_submit_button_title')->nullable();
             $table->timestamps();
         });
     }
