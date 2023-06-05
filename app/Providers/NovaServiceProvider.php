@@ -5,7 +5,10 @@ namespace App\Providers;
 use App\Nova\ContactForm;
 use App\Nova\ContactFormInterest;
 use App\Nova\General;
+use App\Nova\PrivacyPolicy;
+use App\Nova\Product;
 use App\Nova\TeamMember;
+use App\Nova\TermAndCondition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Menu\MenuGroup;
@@ -31,13 +34,21 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::make('General')->path('/resources/general/1/edit'),
                     MenuGroup::make('Pages', [
                         MenuItem::make('Index')->path('/resources/index/1/edit'),
+                        MenuItem::make('About')->path('/resources/about/1/edit'),
+                        MenuItem::make('Privacy Policy')->path('/resources/privacy-policy/1/edit'),
+                        MenuItem::make('Terms And Conditions')->path('/resources/terms-and-conditions/1/edit'),
                     ]),
                     MenuGroup::make('Resources', [
                         MenuItem::resource(TeamMember::class),
+                        MenuItem::resource(Product::class),
                     ]),
                     MenuGroup::make('Contact Forms Section', [
                         MenuItem::resource(ContactForm::class),
                         MenuItem::resource(ContactFormInterest::class),
+                    ]),
+                    MenuGroup::make('Legal Section', [
+                        MenuItem::resource(PrivacyPolicy::class),
+                        MenuItem::resource(TermAndCondition::class),
                     ]),
                 ]),
 
