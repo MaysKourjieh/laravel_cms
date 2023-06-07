@@ -46,7 +46,7 @@ class ContactForm extends Resource
                 ->required(),
             Text::make('Email', 'email')
                 ->required(),
-            BelongsTo::make('ContactFormInterest')
+            BelongsTo::make('Interest', 'contactFormInterest', ContactFormInterest::class)
                 ->nullable(),
             Textarea::make('Message', 'message')
                 ->nullable(),

@@ -132,6 +132,10 @@ class General extends Resource
                 ->nullable(),
             Text::make('Contact Title', 'footer_contact_title')
                 ->nullable(),
+            Text::make('Latitude', 'lat')
+                ->nullable(),
+            Text::make('Longitude', 'lng')
+                ->nullable(),
             Text::make('Quick Links Title', 'footer_quick_links_title')
                 ->nullable(),
             Text::make('Copyrights Title', 'footer_copyrights_title')

@@ -15,6 +15,8 @@ class ContactFormInterest extends Model
         'title',
     ];
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function contact_forms() {
         return $this->hasMany(ContactForm::class);
     }

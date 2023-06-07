@@ -14,4 +14,6 @@ class PrivacyPolicyPage extends Model
     protected $fillable = [
         'heading',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

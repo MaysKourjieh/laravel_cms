@@ -21,4 +21,6 @@ class About extends Model
         'our_company_title',
         'our_company_description',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

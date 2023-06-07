@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('navbar_contact_title')->nullable();
             $table->text('instagram_link')->nullable();
             $table->text('contact_email')->nullable();
+            $table->text('lat')->nullable();
+            $table->text('lng')->nullable();
             $table->text('phone_number')->nullable();
             $table->text('footer_description')->nullable();
             $table->text('footer_products_title')->nullable();

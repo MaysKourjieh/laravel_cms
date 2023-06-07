@@ -18,4 +18,6 @@ class Product extends Model
         'suggested_use',
         'resources',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

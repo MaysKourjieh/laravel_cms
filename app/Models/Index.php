@@ -27,4 +27,6 @@ class Index extends Model
         'contact_subtitle',
         'contact_submit_button_title',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

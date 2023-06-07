@@ -15,4 +15,6 @@ class TermAndCondition extends Model
         'title',
         'description',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }

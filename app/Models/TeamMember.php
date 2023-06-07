@@ -17,4 +17,6 @@ class TeamMember extends Model
         'description',
         'photo',
     ];
+
+    protected $hidden = ['created_at', 'updated_at'];
 }
