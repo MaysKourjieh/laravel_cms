@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->cascadeOnUpdate()->nullOnDelete();
+
             $table->text('photo')->nullable();
             $table->text('name')->nullable();
             $table->text('subtext')->nullable();

@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('index', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->text('carousel_1_heading')->nullable();
+            $table->text('carousel_1_subheading')->nullable();
+            $table->text('carousel_2_heading')->nullable();
+            $table->text('carousel_2_subheading')->nullable();
+            $table->text('carousel_3_heading')->nullable();
+            $table->text('carousel_3_subheading')->nullable();
             $table->text('product_title')->nullable();
             $table->text('product_description')->nullable();
             $table->text('product_cta')->nullable();

@@ -13,6 +13,12 @@ class Index extends Model
 
     protected $fillable = [
         'title',
+        'carousel_1_heading',
+        'carousel_1_subheading',
+        'carousel_2_heading',
+        'carousel_2_subheading',
+        'carousel_3_heading',
+        'carousel_3_subheading',
         'product_title',
         'product_description',
         'product_cta',

@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Nova\Carousel;
+use App\Nova\Category;
 use App\Nova\ContactForm;
 use App\Nova\ContactFormInterest;
 use App\Nova\General;
+use App\Nova\MetricCard;
 use App\Nova\PrivacyPolicy;
 use App\Nova\Product;
 use App\Nova\TeamMember;
@@ -40,6 +43,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     ]),
                     MenuGroup::make('Resources', [
                         MenuItem::resource(TeamMember::class),
+                        MenuItem::resource(MetricCard::class),
+                        MenuItem::resource(Category::class),
                         MenuItem::resource(Product::class),
                     ]),
                     MenuGroup::make('Contact Forms Section', [

@@ -3,28 +3,25 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Product extends Resource
+class MetricCard extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Product>
+     * @var class-string<\App\Models\MetricCard>
      */
-    public static $model = \App\Models\Product::class;
+    public static $model = \App\Models\MetricCard::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -32,7 +29,7 @@ class Product extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'title',
     ];
 
     /**
@@ -44,20 +41,10 @@ class Product extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            BelongsTo::make('Category')->required(),
-            File::make('Photo')
-                ->acceptedTypes('images/*')
-                ->prunable()
-                ->path('products'),
-            Text::make('Name'),
-            Trix::make('Subtext', 'subtext'),
-            Trix::make('Description'),
-            File::make('Supplement Facts', 'supplement_facts')
-                ->acceptedTypes('images/*')
-                ->prunable(),
-            Trix::make('Suggested Use', 'suggested_use'),
-            Trix::make('Resources'),
-
+            Text::make('Title')
+                ->required(),
+            Text::make('Value')
+                ->required()
         ];
     }
 

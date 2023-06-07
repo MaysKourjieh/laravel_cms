@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Category;
 use App\Models\ContactFormInterest;
 use App\Models\General;
 use App\Models\Index;
+use App\Models\MetricCard;
 use App\Models\PrivacyPolicy;
 use App\Models\PrivacyPolicyPage;
+use App\Models\Product;
 use App\Models\TeamMember;
 use App\Models\TermAndCondition;
 use App\Models\TermsAndConditionsPage;
@@ -41,6 +44,15 @@ class PagesController extends Controller
 
         $teamMembers = TeamMember::all();
         $data['teamMembers'] = $teamMembers;
+
+        $metricCards = MetricCard::all();
+        $data['metricCards'] = $metricCards;
+
+        $categories = Category::all();
+        $data['categories'] = $categories;
+
+        $products = Product::all();
+        $data['products'] = $products;
 
         return response()->json([
            'message' => 'Content fetched successfully',

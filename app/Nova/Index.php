@@ -89,10 +89,28 @@ class Index extends Resource
     public function fields(NovaRequest $request)
     {
         return [
+            new Panel('Carousel Section', $this->carouselFields()),
             new Panel('Product Section', $this->productFields()),
             new Panel('About Section', $this->aboutFields()),
             new Panel('Team Section', $this->teamFields()),
             new Panel('Contact Section', $this->contactFields()),
+        ];
+    }
+
+    public function carouselFields() {
+        return [
+            Text::make('Carousel 1 Heading', 'carousel_1_heading')
+                ->nullable(),
+            Text::make('Carousel 1 Subheading', 'carousel_1_subheading')
+                ->nullable(),
+            Text::make('Carousel 2 Heading', 'carousel_2_heading')
+                ->nullable(),
+            Text::make('Carousel 2 Subheading', 'carousel_2_subheading')
+                ->nullable(),
+            Text::make('Carousel 3 Heading', 'carousel_3_heading')
+                ->nullable(),
+            Text::make('Carousel 3 Heading', 'carousel_3_subheading')
+                ->nullable(),
         ];
     }
 
