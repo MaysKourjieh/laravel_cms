@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('supplement_facts')->nullable();
             $table->text('suggested_use')->nullable();
             $table->text('resources')->nullable();
+            $table->double('price')->nullable();
             $table->timestamps();
         });
     }

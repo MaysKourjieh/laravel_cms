@@ -18,6 +18,7 @@ class Product extends Model
         'supplement_facts',
         'suggested_use',
         'resources',
+        'price'
     ];
 
     protected $hidden = ['created_at', 'updated_at'];

@@ -40,22 +40,22 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         MenuItem::make('About')->path('/resources/about/1/edit'),
                         MenuItem::make('Privacy Policy')->path('/resources/privacy-policy/1/edit'),
                         MenuItem::make('Terms And Conditions')->path('/resources/terms-and-conditions/1/edit'),
-                    ]),
+                    ])->collapsable(),
                     MenuGroup::make('Resources', [
                         MenuItem::resource(TeamMember::class),
                         MenuItem::resource(MetricCard::class),
                         MenuItem::resource(Category::class),
                         MenuItem::resource(Product::class),
-                    ]),
+                    ])->collapsable(),
                     MenuGroup::make('Contact Forms Section', [
                         MenuItem::resource(ContactForm::class),
                         MenuItem::resource(ContactFormInterest::class),
-                    ]),
+                    ])->collapsable(),
                     MenuGroup::make('Legal Section', [
                         MenuItem::resource(PrivacyPolicy::class),
                         MenuItem::resource(TermAndCondition::class),
-                    ]),
-                ]),
+                    ])->collapsable(),
+                ])->collapsable(),
 
 
 
