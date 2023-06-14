@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -103,14 +104,26 @@ class Index extends Resource
                 ->nullable(),
             Text::make('Carousel 1 Subheading', 'carousel_1_subheading')
                 ->nullable(),
+            File::make('Carousel 1 Photo', 'carousel_1_photo')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('general'),
             Text::make('Carousel 2 Heading', 'carousel_2_heading')
                 ->nullable(),
             Text::make('Carousel 2 Subheading', 'carousel_2_subheading')
                 ->nullable(),
+            File::make('Carousel 2 Photo', 'carousel_2_photo')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('general'),
             Text::make('Carousel 3 Heading', 'carousel_3_heading')
                 ->nullable(),
             Text::make('Carousel 3 Heading', 'carousel_3_subheading')
                 ->nullable(),
+            File::make('Carousel 3 Photo', 'carousel_3_photo')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('general'),
         ];
     }
 
@@ -122,6 +135,10 @@ class Index extends Resource
                 ->nullable(),
             Textarea::make('CTA Paragraph', 'product_cta')
                 ->nullable(),
+            File::make('Photo', 'products_photo')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('general'),
         ];
     }
 
@@ -137,6 +154,10 @@ class Index extends Resource
                 ->nullable(),
             Text::make('CTA Button Text', 'about_cta')
                 ->nullable(),
+            File::make('Photo', 'about_photo')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('general'),
         ];
     }
 
