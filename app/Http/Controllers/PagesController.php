@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Models\TeamMember;
 use App\Models\TermAndCondition;
 use App\Models\TermsAndConditionsPage;
+use Illuminate\Support\Str;
 
 class PagesController extends Controller
 {
@@ -54,12 +55,14 @@ class PagesController extends Controller
         $products = Product::all();
 
         foreach ($products as $prod) {
-            $productImages = [];
-            foreach ($prod->images as $img) {
-                $productImages[] = $img->image;
+            $prod->getMedia();
+            $productImages1 = [];
+            foreach ($prod->media as $img) {
+                $path = Str::after($img->original_url, 'storage/');
+                $productImages1[] = $path;
             }
-            $prod->productImages = $productImages;
-            unset($prod->images);
+            $prod->productImages1 = $productImages1;
+            unset($prod->media);
         }
 
         $data['products'] = $products;

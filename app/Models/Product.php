@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Product extends Model
+class Product extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'category_id',
@@ -27,7 +30,15 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function images() {
-        return $this->hasMany(ProductImage::class);
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width(130)
+            ->height(130);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('productImages');
     }
 }

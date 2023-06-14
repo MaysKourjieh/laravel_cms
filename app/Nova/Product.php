@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
+use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\File;
@@ -63,7 +65,9 @@ class Product extends Resource
                 ->min(0)
                 ->step(0.01)
                 ->rules(['required', 'numeric']),
-            HasMany::make('Product Images', 'images', ProductImage::class),
+            Images::make('Images', 'productImages')
+                ->conversionOnDetailView('thumb')
+                ->conversionOnForm('thumb'),
         ];
     }
 
