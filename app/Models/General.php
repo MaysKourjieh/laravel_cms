@@ -13,6 +13,7 @@ class General extends Model
 
     protected $fillable = [
         'title',
+        'website_title',
         'navbar_logo',
         'navbar_products_title',
         'navbar_about_title',

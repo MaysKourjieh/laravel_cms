@@ -90,18 +90,21 @@ class General extends Resource
     public function fields(NovaRequest $request)
     {
         return [
-            new Panel('Logo', $this->logoFields()),
+            new Panel('Website Info', $this->infoFields()),
             new Panel('Navbar', $this->navbarFields()),
             new Panel('Footer', $this->footerFields()),
         ];
     }
 
-    public function logoFields() {
+    public function infoFields() {
         return [
             File::make('Logo', 'logo')
                 ->prunable()
                 ->acceptedTypes('image/*')
                 ->path('logo'),
+
+            Text::make('Title', 'website_title')
+                ->required(),
         ];
     }
 
