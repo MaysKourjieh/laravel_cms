@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
@@ -108,6 +109,10 @@ class About extends Resource
         return [
             Text::make('Title', 'section_1_title'),
             Textarea::make('Description', 'section_1_description'),
+            File::make('Image', 'section_1_image')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('about'),
         ];
     }
 
@@ -115,6 +120,10 @@ class About extends Resource
         return [
             Text::make('Title', 'section_2_title'),
             Textarea::make('Description', 'section_2_description'),
+            File::make('Image', 'section_2_image')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('about'),
         ];
     }
 
@@ -122,6 +131,10 @@ class About extends Resource
         return [
             Text::make('Title', 'section_3_title'),
             Textarea::make('Description', 'section_3_description'),
+            File::make('Image', 'section_3_image')
+                ->acceptedTypes('images/*')
+                ->prunable()
+                ->path('about'),
         ];
     }
 
