@@ -52,6 +52,16 @@ class PagesController extends Controller
         $data['categories'] = $categories;
 
         $products = Product::all();
+
+        foreach ($products as $prod) {
+            $productImages = [];
+            foreach ($prod->images as $img) {
+                $productImages[] = $img->image;
+            }
+            $prod->productImages = $productImages;
+            unset($prod->images);
+        }
+
         $data['products'] = $products;
 
         return response()->json([
