@@ -41,6 +41,7 @@ class ProductImage extends Resource
     public function fields(NovaRequest $request)
     {
         return [
+            ID::make()->sortable(),
             File::make('Image')
                 ->acceptedTypes('images/*')
                 ->prunable()
